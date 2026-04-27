@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+
+        <div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Product_name</th>
+                        <th>Purchase_Year</th>
+                        <th>Year1_kWh </th>
+                        <th>Year2_kWh</th>
+                        <th>Year3_kWh</th>
+                        <th>Year4_kWh</th>
+                        <th>Year5_kWh</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {%for row in all_data%}
+                    <tr>
+                        <td>{{ row.Product}}</td>
+                        <td>{{row.Purchase_Year}}</td>
+                        <td>{{ row.Year1_kWh}}</td>
+                        <td>{{ row.Year2_kWh}}</td>
+                        <td>{{ row.Year3_kWh}}</td>
+                        <td>{{ row.Year4_kWh}}</td>
+                        <td>{{ row.Year5_kWh}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <img src="{{ url_for('static', filename='bar.png') }}">
+            <img src="{{ url_for('static', filename='plot.png') }}">
+        </div 
+
+    </main>
+</body>
+</html>
